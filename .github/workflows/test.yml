@@ -1,0 +1,21 @@
+name: test
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    types: [opened]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: install
+        uses: ./.github/workflows/install
+
+      - name: test
+        run: |
+          pnpm test
