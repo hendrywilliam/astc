@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "astc",
-  description: "A simple component to render view from data structure.",
+  title: "Conversion",
+  description: "A component to render data structures.",
 };
 
 export default function RootLayout({
@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} antialiased w-full min-h-screen`}>
+        {children}
+      </body>
     </html>
   );
 }
