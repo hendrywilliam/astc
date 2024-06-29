@@ -14,8 +14,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: install
-        uses: ./.github/workflows/install
+        uses: ./.github/actions/install-dependencies
 
       - name: test
+        shell: bash
         run: |
           pnpm test
